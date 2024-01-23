@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAN LEKCJI | SRODA</title>
-</head>
+<html>
+
 <body onload="startTime()">
+
+<h2>JavaScript Clock</h2>
+
 <div id="txt"></div>
-    <h1>PLAN LEKCJI</h1>
-    <h2>SRODA</h2>
-    <ol>
-    <li>Informatyka</li>
-    <li>Historia</li>
-    <li>Matematyka</li>
-    <li>Fizyka</li>
-    <li>Angielski</li>
-    <li>W-F</li>
-    <li>Polski</li>
-    <li>Polski</li>
-    </ol>
-    function startTime() {
+
+<script>
+function startTime() {
   const today = new Date();
   let h = today.getHours();
   let m = today.getMinutes();
@@ -35,5 +23,7 @@ function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
+</script>
+
 </body>
 </html>
