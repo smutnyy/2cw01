@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAN LEKCJI | SRODA</title>
 </head>
-<body>
+<body onload="startTime()">
+<div id="txt"></div>
     <h1>PLAN LEKCJI</h1>
     <h2>SRODA</h2>
     <ol>
@@ -19,6 +20,20 @@
     <li>Polski</li>
     <li>Polski</li>
     </ol>
-    <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
 </body>
 </html>
